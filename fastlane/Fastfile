@@ -20,6 +20,11 @@ fastlane_version "1.49.0"
 
 default_platform :ios
 
+workspace_name = 'swiftsamples.xcworkspace'
+scheme_name = 'swifttabbed'
+deploygate_user_name = 'tks0720'
+project_name = 'swifttabbed'
+appid = 'org.htks27.app.swifttabbed'
 
 platform :ios do
   before_all do
@@ -40,15 +45,15 @@ platform :ios do
   desc "This will also make sure the profile is up to date"
   lane :beta do
     sigh(
-            app_identifier: "org.htks27.app.swifttabbed",
+            app_identifier: appid,
             adhoc: true
             )
     ipa(
-            scheme: "swifttabbed",
+            scheme: scheme_name,
             configuration: "Release"
             )
-    gym(scheme: "swifttabbed") # Build your app - more options available
-    pilot
+    gym(scheme: scheme_name) # Build your app - more options available
+    # pilot
 
     # sh "your_script.sh"
     # You can also use other beta testing services here
@@ -58,7 +63,7 @@ platform :ios do
   lane :deploy do
     # snapshot
     sigh
-    gym(scheme: "swifttabbed") # Build your app - more options available
+    gym(scheme: scheme_name) # Build your app - more options available
     # deliver(force: true)
     # frameit
   end
