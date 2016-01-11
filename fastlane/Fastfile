@@ -39,7 +39,14 @@ platform :ios do
   desc "Submit a new Beta Build to Apple TestFlight"
   desc "This will also make sure the profile is up to date"
   lane :beta do
-    sigh
+    sigh(
+            app_identifier: "org.htks27.app.swifttabbed",
+            adhoc: true
+            )
+    ipa(
+            scheme: "swifttabbed",
+            configuration: "Release"
+            )
     gym(scheme: "swifttabbed") # Build your app - more options available
     pilot
 
