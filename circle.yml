@@ -1,0 +1,19 @@
+machine:
+  environment:
+    XCODE_SCHEME: swifttabbed
+    XCODE_WORKSPACE: swiftsamples.xcworkspace
+    DEVELOPER_NAME: ''
+    APPNAME: swifttabbed
+    PROFILE_UUID: 
+    # TESTFLIGHT_DIST_LIST: your-dist-list-name
+# dependencies:
+#   override:
+#     - pod install:
+#         timeout: 300
+deployment:
+  testflight:
+    branch: master
+    # commands:
+    #   - ./scripts/add-key.sh
+    #   - ./scripts/testflight.sh
+    #   - ./scripts/remove-key.sh
