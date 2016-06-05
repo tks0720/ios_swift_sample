@@ -35,7 +35,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		AF4879861C3784DF0012054F /* swifttabbed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = swifttabbed.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF431F401C6D1E3700874C69 /* swifttabbed.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = swifttabbed.entitlements; sourceTree = "<group>"; };
+		AF4879861C3784DF0012054F /* swift-app-d.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "swift-app-d.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF4879891C3784DF0012054F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF48798B1C3784DF0012054F /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		AF48798D1C3784DF0012054F /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
@@ -89,7 +90,7 @@
 		AF4879871C3784DF0012054F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AF4879861C3784DF0012054F /* swifttabbed.app */,
+				AF4879861C3784DF0012054F /* swift-app-d.app */,
 				AF48799C1C3784DF0012054F /* swifttabbedTests.xctest */,
 				AF4879A71C3784DF0012054F /* swifttabbedUITests.xctest */,
 			);
@@ -99,6 +100,7 @@
 		AF4879881C3784DF0012054F /* swifttabbed */ = {
 			isa = PBXGroup;
 			children = (
+				AF431F401C6D1E3700874C69 /* swifttabbed.entitlements */,
 				AF4879891C3784DF0012054F /* AppDelegate.swift */,
 				AF48798B1C3784DF0012054F /* FirstViewController.swift */,
 				AF48798D1C3784DF0012054F /* SecondViewController.swift */,
@@ -145,7 +147,7 @@
 			);
 			name = swifttabbed;
 			productName = swifttabbed;
-			productReference = AF4879861C3784DF0012054F /* swifttabbed.app */;
+			productReference = AF4879861C3784DF0012054F /* swift-app-d.app */;
 			productType = "com.apple.product-type.application";
 		};
 		AF48799B1C3784DF0012054F /* swifttabbedTests */ = {
@@ -197,6 +199,14 @@
 					AF4879851C3784DF0012054F = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = G8GJGGLWV4;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 0;
+							};
+							com.apple.WAC = {
+								enabled = 0;
+							};
+						};
 					};
 					AF48799B1C3784DF0012054F = {
 						CreatedOnToolsVersion = 7.2;
@@ -320,7 +330,10 @@
 		AF4879AE1C3784DF0012054F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALTERNATE_PRODUCT_NAME = "swift app debug";
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_ID_SUFFIX = .debug;
+				"BUNDLE_ID_SUFFIX[arch=*]" = "";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -356,6 +369,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(ALTERNATE_PRODUCT_NAME)";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -365,7 +379,9 @@
 		AF4879AF1C3784DF0012054F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALTERNATE_PRODUCT_NAME = "swift app";
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_ID_SUFFIX = "";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -394,6 +410,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(ALTERNATE_PRODUCT_NAME)";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -403,14 +420,15 @@
 		AF4879B11C3784DF0012054F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALTERNATE_PRODUCT_NAME = "swift-app-d";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CURRENT_PROJECT_VERSION = 2;
 				INFOPLIST_FILE = swifttabbed/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.htks27.app.swifttabbed;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.htks27.app.swifttabbed$(BUNDLE_ID_SUFFIX)";
+				PRODUCT_NAME = "$(ALTERNATE_PRODUCT_NAME)";
 				PROVISIONING_PROFILE = "";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -419,14 +437,15 @@
 		AF4879B21C3784DF0012054F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALTERNATE_PRODUCT_NAME = "swift-app";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CURRENT_PROJECT_VERSION = 2;
 				INFOPLIST_FILE = swifttabbed/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.htks27.app.swifttabbed;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.htks27.app.swifttabbed$(BUNDLE_ID_SUFFIX)";
+				PRODUCT_NAME = "$(ALTERNATE_PRODUCT_NAME)";
 				PROVISIONING_PROFILE = "";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
