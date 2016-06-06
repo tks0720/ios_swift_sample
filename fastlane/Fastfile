@@ -64,7 +64,8 @@ platform :ios do
   lane :beta_debug do
     gym(
             scheme: scheme_name,
-            configuration: "Release",
+            configuration: "Debug",
+            output_name: 'swift-appd',
             use_legacy_build_api: true
             )
   end
